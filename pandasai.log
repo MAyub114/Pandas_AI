@@ -1,0 +1,111 @@
+2023-09-07 15:01:20 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/home/codespace/.python/current/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+  File "/home/codespace/.python/current/lib/python3.10/site-packages/pandasai/helpers/path.py", line 37, in find_closest
+    return os.path.join(find_project_root(filename), filename)
+  File "/home/codespace/.python/current/lib/python3.10/site-packages/pandasai/helpers/path.py", line 29, in find_project_root
+    raise ValueError("Could not find the root folder of the project.")
+ValueError: Could not find the root folder of the project.
+2023-09-07 15:02:52 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/home/codespace/.python/current/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+  File "/home/codespace/.python/current/lib/python3.10/site-packages/pandasai/helpers/path.py", line 37, in find_closest
+    return os.path.join(find_project_root(filename), filename)
+  File "/home/codespace/.python/current/lib/python3.10/site-packages/pandasai/helpers/path.py", line 29, in find_project_root
+    raise ValueError("Could not find the root folder of the project.")
+ValueError: Could not find the root folder of the project.
+2023-09-07 15:08:11 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/home/codespace/.python/current/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+  File "/home/codespace/.python/current/lib/python3.10/site-packages/pandasai/helpers/path.py", line 37, in find_closest
+    return os.path.join(find_project_root(filename), filename)
+  File "/home/codespace/.python/current/lib/python3.10/site-packages/pandasai/helpers/path.py", line 29, in find_project_root
+    raise ValueError("Could not find the root folder of the project.")
+ValueError: Could not find the root folder of the project.
+2023-09-07 15:09:38 [INFO] Question: Which are the 5 happiest countries?
+2023-09-07 15:09:38 [INFO] Running PandasAI with openai LLM...
+2023-09-07 15:09:38 [INFO] Prompt ID: 79d91fc9-f40f-401b-ba27-7d36ba472732
+2023-09-07 15:09:52 [INFO] 
+                    Code generated:
+                    ```
+                    # TODO import all the dependencies required
+import pandas as pd
+
+# Analyze the data
+# 1. Prepare: Preprocessing and cleaning data if necessary
+# 2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+# 3. Analyze: Conducting the actual analysis (if the user asks to create a chart save it to an image in exports/charts/temp_chart.png and do not show the chart.)
+# 4. Output: return a dictionary of:
+# - type (possible values "text", "number", "dataframe", "plot")
+# - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+# Example output: { "type": "text", "value": "The average loan amount is $15,000." }
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    # Code goes here (do not add comments)
+    # 2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    # Filter the dataframe to include only the columns 'country' and 'happiness_index'
+    df = dfs[0][['country', 'happiness_index']]
+    
+    # Sort the dataframe by 'happiness_index' in descending order
+    df_sorted = df.sort_values(by='happiness_index', ascending=False)
+    
+    # Select the top 5 happiest countries
+    top_5_happiest_countries = df_sorted.head(5)
+    
+    # 4. Output: return a dictionary of:
+    # - type (possible values "text", "number", "dataframe", "plot")
+    # - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    return {"type": "dataframe", "value": top_5_happiest_countries}
+
+# Declare a result variable
+result = analyze_data(dfs)
+                    ```
+                
+2023-09-07 15:09:52 [INFO] 
+Code running:
+```
+def analyze_data(dfs: list[pd.DataFrame]) ->dict:
+    df = dfs[0][['country', 'happiness_index']]
+    df_sorted = df.sort_values(by='happiness_index', ascending=False)
+    top_5_happiest_countries = df_sorted.head(5)
+    return {'type': 'dataframe', 'value': top_5_happiest_countries}
+
+
+result = analyze_data(dfs)
+        ```
+2023-09-07 15:09:52 [INFO] Answer: {'type': 'dataframe', 'value':           country  happiness_index
+6          Canada             7.23
+7       Australia             7.22
+1  United Kingdom             7.16
+3         Germany             7.07
+0   United States             6.94}
+2023-09-07 15:09:52 [INFO] Executed in: 13.832756519317627s
+2023-09-07 15:09:52 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/home/codespace/.python/current/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+  File "/home/codespace/.python/current/lib/python3.10/site-packages/pandasai/helpers/path.py", line 37, in find_closest
+    return os.path.join(find_project_root(filename), filename)
+  File "/home/codespace/.python/current/lib/python3.10/site-packages/pandasai/helpers/path.py", line 29, in find_project_root
+    raise ValueError("Could not find the root folder of the project.")
+ValueError: Could not find the root folder of the project.
+2023-09-07 15:11:23 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/home/codespace/.python/current/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+  File "/home/codespace/.python/current/lib/python3.10/site-packages/pandasai/helpers/path.py", line 37, in find_closest
+    return os.path.join(find_project_root(filename), filename)
+  File "/home/codespace/.python/current/lib/python3.10/site-packages/pandasai/helpers/path.py", line 29, in find_project_root
+    raise ValueError("Could not find the root folder of the project.")
+ValueError: Could not find the root folder of the project.
+2023-09-07 15:16:07 [ERROR] Could not load configuration
+Traceback (most recent call last):
+  File "/home/codespace/.python/current/lib/python3.10/site-packages/pandasai/config.py", line 19, in load_config
+    with open(find_closest("pandasai.json"), "r") as f:
+  File "/home/codespace/.python/current/lib/python3.10/site-packages/pandasai/helpers/path.py", line 37, in find_closest
+    return os.path.join(find_project_root(filename), filename)
+  File "/home/codespace/.python/current/lib/python3.10/site-packages/pandasai/helpers/path.py", line 29, in find_project_root
+    raise ValueError("Could not find the root folder of the project.")
+ValueError: Could not find the root folder of the project.
